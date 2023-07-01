@@ -1,0 +1,254 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;    
+}
+
+header{
+    background-color: var(--color5);
+}
+
+.carousel-caption{
+    bottom: 9rem !important;    
+}
+
+:root{
+    --color1: #63458c;
+    --color2: #9f5694;
+    --color3: #ee90bb;
+    --color4: #f8ccd9;
+    --color5: #f8ebe8;
+}
+
+h1{
+    color: var(--color5) !important;
+    padding: .5rem;
+    font-size: 4rem !important;
+    font-style: oblique;
+    font-weight: bolder !important;
+}
+
+.navbar-nav, .mr-auto {
+flex: 1;
+display: flex;
+gap: 2rem;
+justify-content: end;
+
+}
+
+a.nav-link{
+    color: var(--color1) !important;
+    border: none;
+    padding-bottom: 0;  
+
+}
+
+a.nav-link:hover{
+    color: white !important;
+    background-color: var(--color1);
+    border: none;
+    border-radius: 1rem;
+    padding-bottom: .5rem;
+}
+
+.carousel-inner{
+    height: 20rem; 
+    display: flex;
+    align-items: center;          
+}
+
+.checkbox{
+    display: flex;
+    justify-content: start;
+    padding: 1.5rem;
+    align-items: center;
+}
+.filters{
+    display: flex;
+    justify-content: space-between;
+}
+
+.searchbar{
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.btn:hover {
+    color: white !important;
+    background-color: var(--color2) !important;
+    border-color: white !important;
+}
+
+.btn-outline-success{
+    color: var(--color1) !important;
+    border-color: var(--color1) !important;
+    background-color: var(--color1);
+}
+
+.searchicon{
+    height: 2rem;
+}
+
+.cards{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+}
+
+.details{
+    background-color: var(--color3);
+    color: white;
+    text-decoration: none;
+    padding: .4rem;
+    border-radius: .2rem;
+    
+}
+
+.card-text{
+    text-align: center !important;
+}
+
+.card-title{
+    text-align: center !important;
+}
+
+.card{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    object-fit: contain;    
+}
+.col{
+    display: flex;
+    justify-content: center;
+    gap: 0;
+}
+.card-img-top{
+    height: 13rem;
+}
+
+footer{
+    background-color: var(--color4);
+    min-height: 4rem;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;   
+    
+    
+}
+
+.iconsm{
+    height: 2rem;
+}
+
+.socialMedia{
+    display: flex;
+    gap: 1rem;
+    padding-left: 2rem;
+}
+
+footer p{
+    padding-right: 2rem;
+    font-weight: bold;  
+    margin: 0;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;  
+    align-items: center; 
+    justify-content: center;
+    width: 60%;
+    padding: 1rem;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;}
+
+.btn-primary{
+    background-color: var(--color2) !important;
+    border-color: white !important;
+    
+}
+
+.fill{
+    width: 90%;
+}
+
+table, td, th, thead, tr {
+    
+    border: 1px solid rgb(111, 21, 114);
+    border-collapse: collapse;
+    padding: 3px;
+    text-align: left; 
+    
+       
+}
+
+.form-check-input:checked {
+    background-color: var(--color2) !important;
+    border-color: var(--color2) !important;
+}
+
+
+
+.headerTable{
+    background-color: var(--color3);
+}
+
+.detail {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+@media (max-width: 767.98px) {
+    
+    .detail {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .filters{
+        display: none;
+    }
+
+ }
+
+
+@media (max-width: 991.98px) {
+
+    .detail {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .filters{
+        display: none;
+    }
+}
+
+@media (max-width: 1199.98px) { 
+    .detail {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .filters{
+        display: none;
+    }
+ }
+

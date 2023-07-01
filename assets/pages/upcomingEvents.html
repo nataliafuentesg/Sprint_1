@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events - Amazing Events</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="shortcut icon" href="../Images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="../../index.html"><img src="../Images/amazing_brand.png" alt="Logo" width="100"
+                        height="30"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item ">
+                            <a class="nav-link active" aria-current="page" href="../../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="#">Upcoming Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../pages/pastEvents.html">Past
+                                Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="../pages/contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../pages/stats.html">Stats</a>
+                        </li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+
+        <!-- banner -->
+        <div>
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center">
+                            <img src="../Images/optional_banner_1.jpg" class="img-fluid" alt="Sushi">
+                        </div>
+
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../Images/optional_banner_2.jpg" class="img-fluid" alt="Cinema">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../Images/optional_banner_3.jpg" class="img-fluid" alt="Church Inside">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+
+                <div class="carousel-caption">
+                    <h1>UPCOMING EVENTS</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- checkbox and search bar -->
+
+        <div class="filters">
+
+            <div class="checkbox">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">Food Fair</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">Museum</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox3">Costume Party</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox4">Music Concert</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox5">Race</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox6">Book Exchange</label>
+                </div>
+            </div>
+
+            <div class="searchbar">
+                <div class="container">
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit"><img src="../Images/search.png"
+                                alt="search icon" class="searchicon"></button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- cards with images -->
+
+        <div class="cards ">
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3">
+                <div class="col">
+                  <div class="card h-100" style="width: 17rem;">
+                    <img src="../Images/costume_party.jpg" class="card-img-top" alt="Halloween">
+                    <div class="card-body">
+                        <h5 class="card-title">Halloween Night</h5>
+                        <p class="card-text">Come in your scariest costume character to win amazing prizes.</p>
+                                              
+                      
+                        <div class="info">
+                            <p>12 USD</p>
+                            <a href="./detailCostumeParty.html" class="details">Details</a>
+                        </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100" style="width: 17rem;">
+                    <img src="../Images/music_concert.jpg" class="card-img-top" alt="music concert">
+                    <div class="card-body">
+                      <h5 class="card-title">Metallica in concert</h5>
+                      <p class="card-text">The only concert of the most emblematic band in the world</p>
+                        <div class="info">
+                            <p>150 USD</p>
+                            <a href="./detailMusicConcert.html" class="details">Details</a>
+                        </div>
+                    
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100" style="width: 17rem;">
+                    <img src="../Images/cinema.jpg" class="card-img-top" alt="cinema">
+                    <div class="card-body">
+                      <h5 class="card-title">Avengers</h5>
+                      <p class="card-text">Marvel's Avengers 3d premiere the start of an epic saga with your best superheroes</p>
+                        <div class="info">
+                            <p>250 USD</p>
+                            <a href="./detailCinema.html" class="details">Details</a>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100" style="width: 17rem;">
+                      <img src="../Images/books.jpg" class="card-img-top" alt="books">
+                      <div class="card-body">
+                        <h5 class="card-title">School Book Fair</h5>
+                        <p class="card-text">Bring your unused school book and bring the one you need.</p>
+                          <div class="info">
+                              <p>1 USD</p>
+                              <a href="./detailBooks.html" class="details">Details</a>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                
+              </div>
+                
+            </div>
+              
+        </div>
+
+        <!-- footer with social media -->
+
+        <footer>
+            <div class="socialMedia">
+                <a href="#"><img src="../Images/instagram.png" alt="Instagram" class="iconsm"></a>
+                <a href="#"><img src="../Images/facebook.png" alt="Facebook" class="iconsm" ></a>
+                <a href="#"><img src="../Images/whatsapp.png" alt="whatsapp" class="iconsm"></a>
+
+            </div>
+            <div class="footerText">
+                <p>COHORT</p>
+            </div>
+        </footer>
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
