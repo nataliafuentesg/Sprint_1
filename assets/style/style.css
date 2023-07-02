@@ -175,7 +175,10 @@ footer p{
     justify-content: center;
     width: 60%;
     padding: 1rem;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;}
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+
 
 .btn-primary{
     background-color: var(--color2) !important;
@@ -187,16 +190,6 @@ footer p{
     width: 90%;
 }
 
-table, td, th, thead, tr {
-    
-    border: 1px solid rgb(111, 21, 114);
-    border-collapse: collapse;
-    padding: 3px;
-    text-align: left; 
-    
-       
-}
-
 .form-check-input:checked {
     background-color: var(--color2) !important;
     border-color: var(--color2) !important;
@@ -206,6 +199,16 @@ table, td, th, thead, tr {
 
 .headerTable{
     background-color: var(--color3);
+}
+
+table, td, th {
+    
+    border: 1px solid rgb(0, 0, 0) !important;
+    border-collapse: collapse;
+    padding: 3px;
+    text-align: left; 
+    
+       
 }
 
 .detail {
