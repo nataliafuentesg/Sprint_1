@@ -95,9 +95,8 @@ a.nav-link:hover{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding: 2rem;
+    
 }
 
 .info{
@@ -136,7 +135,7 @@ a.nav-link:hover{
 .col{
     display: flex;
     justify-content: center;
-    gap: 0;
+   
 }
 .card-img-top{
     height: 13rem;
@@ -245,11 +244,11 @@ table, td, th {
 }
 
 @media (max-width: 1199.98px) { 
-    .detail {
+    /* .detail {
         display: flex;
         flex-wrap: wrap;
-        flex-direction: column;
-    }
+        flex-direction: column; 
+    } */
     .filters{
         display: none;
     }
