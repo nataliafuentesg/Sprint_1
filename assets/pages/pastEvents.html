@@ -32,7 +32,7 @@
                                 Events</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Past
+                            <a class="nav-link active" aria-current="page" href="#" style="color:white !important; background-color:#9f5694;">Past
                                 Events</a>
                         </li>
                         <li class="nav-item">
@@ -48,9 +48,9 @@
             </div>
         </nav>
     </header>
-    <main>
+    <main class="d-flex flex-wrap justify-content-center flex-column align-items-center">
 
-        <!-- banner -->
+        
         <div>
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
@@ -84,7 +84,7 @@
             </div>
         </div>
 
-        <!-- checkbox and search bar -->
+        
 
         <div class="filters">
 
@@ -127,64 +127,15 @@
 
         </div>
 
-        <!-- cards with images -->
+        
 
         <div class="cards ">
 
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
-                <div class="col">
-                    <div class="card h-100" style="width: 17rem;">
-                        <img src="../Images/food_fair.jpg" class="card-img-top" alt="Food">
-                        <div class="card-body">
-                            <h5 class="card-title">Festival of the collectivities</h5>
-                            <p class="card-text">Enjoy your favorite dishes from different countries in a unique event
-                                for the whole family.</p>
-
-
-                            <div class="info">
-                                <p>5 USD</p>
-                                <a href="./detailFoodFair.html" class="details">Details</a>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100" style="width: 17rem;">
-                        <img src="../Images/outing_to_the_museum.jpg" class="card-img-top" alt="museum">
-                        <div class="card-body">
-                            <h5 class="card-title">Art Exhibition</h5>
-                            <p class="card-text">Let's go to the art museum for an incredible tour to learn about the
-                                largest dinosaurs.</p>
-                            <div class="info">
-                                <p>15 USD</p>
-                                <a href="./detailMuseum.html" class="details">Details</a>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100" style="width: 17rem;">
-                        <img src="../Images/marathon.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">10K for life</h5>
-                            <p class="card-text">Come and exercise, improve your health and lifestyle.</p>
-                            <div class="info">
-                                <p>3 USD</p>
-                                <a href="./detailMarathon.html" class="details">Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-            </div>
-
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4" id="pastEventsCards">
+        
         </div>
 
-        <!-- footer with social media -->
+        
 
         <footer>
             <div class="socialMedia">
@@ -204,6 +155,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
+
+    <script src="../../data.js"></script>
+    <script src="./pastEvents.js"></script>
 </body>
 
 </html>

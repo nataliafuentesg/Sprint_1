@@ -28,7 +28,7 @@
                             <a class="nav-link active" aria-current="page" href="../../index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Upcoming Events</a>
+                            <a class="nav-link active" aria-current="page" href="#" style="color:white !important; background-color:#9f5694;">Upcoming Events</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="../pages/pastEvents.html">Past
@@ -47,9 +47,9 @@
             </div>
         </nav>
     </header>
-    <main>
+    <main class="d-flex flex-wrap justify-content-center flex-column align-items-center">
 
-        <!-- banner -->
+        
         <div>
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
@@ -83,7 +83,7 @@
             </div>
         </div>
 
-        <!-- checkbox and search bar -->
+       
 
         <div class="filters">
 
@@ -126,77 +126,17 @@
 
         </div>
 
-        <!-- cards with images -->
+       
 
         <div class="cards ">
 
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3">
-                <div class="col">
-                    <div class="card h-100" style="width: 17rem;">
-                        <img src="../Images/costume_party.jpg" class="card-img-top" alt="Halloween">
-                        <div class="card-body">
-                            <h5 class="card-title">Halloween Night</h5>
-                            <p class="card-text">Come in your scariest costume character to win amazing prizes.</p>
-
-
-                            <div class="info">
-                                <p>12 USD</p>
-                                <a href="./detailCostumeParty.html" class="details">Details</a>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100" style="width: 17rem;">
-                        <img src="../Images/music_concert.jpg" class="card-img-top" alt="music concert">
-                        <div class="card-body">
-                            <h5 class="card-title">Metallica in concert</h5>
-                            <p class="card-text">The only concert of the most emblematic band in the world</p>
-                            <div class="info">
-                                <p>150 USD</p>
-                                <a href="./detailMusicConcert.html" class="details">Details</a>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100" style="width: 17rem;">
-                        <img src="../Images/cinema.jpg" class="card-img-top" alt="cinema">
-                        <div class="card-body">
-                            <h5 class="card-title">Avengers</h5>
-                            <p class="card-text">Marvel's Avengers 3d premiere the start of an epic saga with your best
-                                superheroes</p>
-                            <div class="info">
-                                <p>250 USD</p>
-                                <a href="./detailCinema.html" class="details">Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card h-100" style="width: 17rem;">
-                        <img src="../Images/books.jpg" class="card-img-top" alt="books">
-                        <div class="card-body">
-                            <h5 class="card-title">School Book Fair</h5>
-                            <p class="card-text">Bring your unused school book and bring the one you need.</p>
-                            <div class="info">
-                                <p>1 USD</p>
-                                <a href="./detailBooks.html" class="details">Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3" id="upcomingEventsCards">
+                
         </div>
 
         
 
-        <!-- footer with social media -->
+        
 
         <footer>
             <div class="socialMedia">
@@ -216,6 +156,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
+
+    <script src="../../data.js"></script>
+    <script src="./upComing.js"></script>
 </body>
 
 </html>
