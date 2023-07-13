@@ -11,7 +11,7 @@ function createCard(object) {
                 <p class="card-text">${object.description}</p>
                 <div class="info">
                     <p>${object.price}</p>
-                    <a href="./details.html" class="details">Details</a>
+                    <a href="./details.html?id=${object._id}" class="details">Details</a>
                 </div>
             </div>
             </div>
@@ -42,4 +42,22 @@ console.log(findDate)
 printTemplate(findDate, container)
 
 console.log(data.events)
+
+let searchBar = document.getElementById("searchBar");
+
+function empty(elementoHTML){
+    elementoHTML.innerHTML = ""
+}
+
+searchBar.addEventListener("keyup", (e) => {
+    let searchedInput = e.target.value.toLowerCase();
+    let filteredCards = findDate.filter((cards) => { 
+    
+        return (cards.name.toLowerCase().includes(searchedInput));
+    
+    });
+    console.log(filteredCards);
+    empty(container)
+    printTemplate(filteredCards, container);    
+})
 
