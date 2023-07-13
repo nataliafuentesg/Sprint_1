@@ -41,14 +41,14 @@ console.log(findDate)
 
 printTemplate(findDate, container)
 
-//console.log(data.events)
+
 
 let checkboxContainer = document.getElementById("checkboxContainer")
 let category = findDate.map(event => event.category)
 let categoryNoRepeat = new Set(category)
-console.log(categoryNoRepeat)
+
 let categoryArray = Array.from(categoryNoRepeat)
-console.log(categoryArray)
+
 
 function createCheckbox(category) {
     return ` <label for="${category}">${category}</label>
@@ -65,22 +65,22 @@ function showCheckbox(array, elementoHTML) {
 }
 
 showCheckbox(categoryArray, checkboxContainer)
-console.log(checkboxContainer)
+
 
 let checkboxes = document.querySelectorAll("input[type='checkbox']");
-console.log(checkboxes)
+
 let checkboxesArray = Array.from(checkboxes);
-console.log(checkboxesArray)
+
 
 let selectedCategories = [];
 let mapCategories = [];
-console.log(mapCategories)
+
 
 checkboxContainer.addEventListener("change", () => {
     selectedCategories = checkboxesArray.filter(checkboxAr => checkboxAr.checked);
-    console.log(selectedCategories)
+    
     mapCategories = selectedCategories.map(checkboxMap => checkboxMap.value);
-    console.log(mapCategories);
+    
     let searchedInput = searchBar.value.toLowerCase();
     let filteredCards = findDate.filter(event =>
         (mapCategories.length === 0 || mapCategories.includes(event.category))

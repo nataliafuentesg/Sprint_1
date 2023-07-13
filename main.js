@@ -23,84 +23,81 @@ function printTemplate(array, elementoHTML) {
     for (let event of array) {
         template += createCard(event)
     }
-    
+
     elementoHTML.innerHTML += template
 }
 
 printTemplate(data.events, container)
 
-// console.log(data.events)
+
 
 let checkboxContainer = document.getElementById("checkboxContainer")
-let category = data.events.map(event => event.category) 
+let category = data.events.map(event => event.category)
 let categoryNoRepeat = new Set(category)
-console.log(categoryNoRepeat)
-let categoryArray = Array.from(categoryNoRepeat)
-console.log(categoryArray)
 
-function createCheckbox(category){
+let categoryArray = Array.from(categoryNoRepeat)
+
+
+function createCheckbox(category) {
     return ` <label for="${category}">${category}</label>
             <input type="checkbox" name="category" id="${category}" value="${category}">
             `
 }
 
-function showCheckbox(array, elementoHTML){
-   
-    for( let category of array){
+function showCheckbox(array, elementoHTML) {
+
+    for (let category of array) {
         elementoHTML.innerHTML += createCheckbox(category)
     }
-   
+
 }
 
 showCheckbox(categoryArray, checkboxContainer)
-console.log(checkboxContainer)
+
 
 let checkboxes = document.querySelectorAll("input[type='checkbox']");
-console.log(checkboxes)
+
 let checkboxesArray = Array.from(checkboxes);
-console.log(checkboxesArray)
+
 
 let selectedCategories = [];
 let mapCategories = [];
-console.log(mapCategories)
 
-checkboxContainer.addEventListener("change", () => {    
-        
-        selectedCategories = checkboxesArray.filter(checkboxAr => checkboxAr.checked);
-        console.log(selectedCategories)
-        mapCategories = selectedCategories.map(checkboxMap => checkboxMap.value);
-        console.log(mapCategories);
-        let searchedInput = searchBar.value.toLowerCase();
-        let filteredCards = data.events.filter(event =>
+
+checkboxContainer.addEventListener("change", () => {
+    selectedCategories = checkboxesArray.filter(checkboxAr => checkboxAr.checked);
+    
+    mapCategories = selectedCategories.map(checkboxMap => checkboxMap.value);
+    
+    let selectedC = mapCategories.includes(event => event.category);
+    
+    let searchedInput = searchBar.value.toLowerCase();
+    let filteredCards = data.events.filter(event =>
         (mapCategories.length === 0 || mapCategories.includes(event.category))
         && event.name.toLowerCase().includes(searchedInput)
-        );
-        if (filteredCards.length === 0) {
-            displayError(container);
-        } else {
-            clear(container);
-            printTemplate(filteredCards, container);
-        }
-               
-    }         
-    
-);
+    );
+   
+    if (filteredCards.length === 0) {
+        displayError(container);
+    } else {
+        clear(container);
+       
+        printTemplate(filteredCards, container);
+    }
+}
 
-  
-// function filterByCategory(events, selectedCategories) {
-//     return events.filter(event => selectedCategories.includes(event.category));
-// }
+);
 
 
 let searchBar = document.getElementById("searchBar");
-console.log("searchBar")
 
-function clear(elementoHTML){
+
+function clear(elementoHTML) {
     elementoHTML.innerHTML = ""
 }
 
-function displayError(elementoHTML){
-    elementoHTML.innerHTML = `<H3>There Are No Coincidences</H3>`
+function displayError(elementoHTML) {
+    elementoHTML.innerHTML = `<H5>There Are No Coincidences</H5>`
 }
 
 searchBar.addEventListener("keyup", (e) => {
@@ -109,19 +106,19 @@ searchBar.addEventListener("keyup", (e) => {
         (mapCategories.length === 0 || mapCategories.includes(event.category)) //will filter just the events checked AND tht include what the sear bar has
         && event.name.toLowerCase().includes(searchedInput));
 
-    if(filteredCards.length == 0){
+    if (filteredCards.length == 0) {
         displayError(container);
-    }else{
-        clear(container)
+    } else {
+        console.log(filteredCards);
+        clear(container);
         printTemplate(filteredCards, container);
     }
-    
 })
 
 
 
 
-    
+
 
 
 
