@@ -87,9 +87,9 @@ checkboxContainer.addEventListener("change", () => {
 );
 
   
-function filterByCategory(events, selectedCategories) {
-    return events.filter(event => selectedCategories.includes(event.category));
-}
+// function filterByCategory(events, selectedCategories) {
+//     return events.filter(event => selectedCategories.includes(event.category));
+// }
 
 
 let searchBar = document.getElementById("searchBar");
@@ -106,7 +106,7 @@ function displayError(elementoHTML){
 searchBar.addEventListener("keyup", (e) => {
     let searchedInput = e.target.value.toLowerCase();
     let filteredCards = data.events.filter(event =>
-        (mapCategories.length === 0 || mapCategories.includes(event.category))
+        (mapCategories.length === 0 || mapCategories.includes(event.category)) //will filter just the events checked AND tht include what the sear bar has
         && event.name.toLowerCase().includes(searchedInput));
 
     if(filteredCards.length == 0){

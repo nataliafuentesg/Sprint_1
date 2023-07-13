@@ -39,21 +39,81 @@ printTemplate(findDate, container)
 
 console.log(data.events)
 
-let searchBar = document.getElementById("searchBar");
+let checkboxContainer = document.getElementById("checkboxContainer")
+let category = findDate.map(event => event.category)
+let categoryNoRepeat = new Set(category)
+console.log(categoryNoRepeat)
+let categoryArray = Array.from(categoryNoRepeat)
+console.log(categoryArray)
 
-function empty(elementoHTML){
+function createCheckbox(category) {
+    return ` <label for="${category}">${category}</label>
+            <input type="checkbox" name="category" id="${category}" value="${category}">
+            `
+}
+
+function showCheckbox(array, elementoHTML) {
+
+    for (let category of array) {
+        elementoHTML.innerHTML += createCheckbox(category)
+    }
+
+}
+
+showCheckbox(categoryArray, checkboxContainer)
+console.log(checkboxContainer)
+
+let checkboxes = document.querySelectorAll("input[type='checkbox']");
+console.log(checkboxes)
+let checkboxesArray = Array.from(checkboxes);
+console.log(checkboxesArray)
+
+let selectedCategories = [];
+let mapCategories = [];
+console.log(mapCategories)
+
+checkboxContainer.addEventListener("change", () => {
+    selectedCategories = checkboxesArray.filter(checkboxAr => checkboxAr.checked);
+    console.log(selectedCategories)
+    mapCategories = selectedCategories.map(checkboxMap => checkboxMap.value);
+    console.log(mapCategories);
+    let searchedInput = searchBar.value.toLowerCase();
+    let filteredCards = findDate.filter(event =>
+        (mapCategories.length === 0 || mapCategories.includes(event.category))
+        && event.name.toLowerCase().includes(searchedInput)
+    );
+    if (filteredCards.length === 0) {
+        displayError(container);
+    } else {
+        clear(container);
+        printTemplate(filteredCards, container);
+    }
+}
+
+);
+
+
+let searchBar = document.getElementById("searchBar");
+console.log("searchBar")
+
+function clear(elementoHTML) {
     elementoHTML.innerHTML = ""
+}
+
+function displayError(elementoHTML) {
+    elementoHTML.innerHTML = `<H3>There Are No Coincidences</H3>`
 }
 
 searchBar.addEventListener("keyup", (e) => {
     let searchedInput = e.target.value.toLowerCase();
-    let filteredCards = findDate.filter((cards) => { 
-    
-        return (cards.name.toLowerCase().includes(searchedInput));
-    
-    });
-    console.log(filteredCards);
-    empty(container)
-    printTemplate(filteredCards, container);    
-})
+    let filteredCards = findDate.filter(event =>
+        (mapCategories.length === 0 || mapCategories.includes(event.category)) //will filter just the events checked AND tht include what the sear bar has
+        && event.name.toLowerCase().includes(searchedInput));
 
+    if (filteredCards.length == 0) {
+        displayError(container);
+    } else {
+        clear(container);
+        printTemplate(filteredCards, container);
+    }
+})
