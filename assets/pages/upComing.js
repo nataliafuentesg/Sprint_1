@@ -1,6 +1,34 @@
 console.log([document])
 
 let container = document.getElementById("upcomingEventsCards")
+let searchBar = document.getElementById("searchBar");
+let findDate; 
+let checkboxContainer = document.getElementById("checkboxContainer")
+let checkboxesArray = [];
+let selectedCategories = [];
+let mapCategories = [];
+
+fetch("https://mindhub-xj03.onrender.com/api/amazing")
+.then(answer => answer.json())
+.then( data => {
+    events = data.events;
+    console.log(data);
+    findDate = events.filter(upComingD => upComingD.date >= data.currentDate)
+    printTemplate(findDate, container);
+    category = findDate.map(event => event.category);
+    categoryNoRepeat = new Set(category);
+    categoryArray = Array.from(categoryNoRepeat);
+    console.log(categoryArray);
+    showCheckbox(categoryArray, checkboxContainer); 
+
+    let checkboxes = document.querySelectorAll("input[type='checkbox']")
+    console.log(checkboxes)  
+    checkboxesArray = Array.from(checkboxes);
+    console.log(checkboxesArray); 
+      
+    
+})
+.catch(error => console.log(error))
 
 function createCard(object) {    
         return `<div class="col">
@@ -10,7 +38,7 @@ function createCard(object) {
                 <h5 class="card-title">${object.name}</h5>
                 <p class="card-text">${object.description}</p>
                 <div class="info">
-                    <p>${object.price}</p>
+                    <p>$${object.price}</p>
                     <a href="./details.html?id=${object._id}" class="details">Details</a>
                 </div>
             </div>
@@ -18,8 +46,6 @@ function createCard(object) {
             </div>`    
 
 }
-
-
 function printTemplate(array, elementoHTML) {
     
         let template = ""
@@ -27,24 +53,10 @@ function printTemplate(array, elementoHTML) {
             
             template += createCard(event)
         }
-        console.log(template)
+        
         elementoHTML.innerHTML += template
     
-}
-    
-let findDate = data.events.filter(upComingD => upComingD.date >= data.currentDate)
-
-
-printTemplate(findDate, container)
-
-
-
-let checkboxContainer = document.getElementById("checkboxContainer")
-let category = findDate.map(event => event.category)
-let categoryNoRepeat = new Set(category)
-
-let categoryArray = Array.from(categoryNoRepeat)
-
+} 
 
 function createCheckbox(category) {
     return ` <label for="${category}">${category}</label>
@@ -59,18 +71,6 @@ function showCheckbox(array, elementoHTML) {
     }
 
 }
-
-showCheckbox(categoryArray, checkboxContainer)
-console.log(checkboxContainer)
-
-let checkboxes = document.querySelectorAll("input[type='checkbox']");
-
-let checkboxesArray = Array.from(checkboxes);
-
-
-let selectedCategories = [];
-let mapCategories = [];
-
 
 checkboxContainer.addEventListener("change", () => {
     selectedCategories = checkboxesArray.filter(checkboxAr => checkboxAr.checked);
@@ -92,10 +92,6 @@ checkboxContainer.addEventListener("change", () => {
 
 );
 
-
-let searchBar = document.getElementById("searchBar");
-
-
 function clear(elementoHTML) {
     elementoHTML.innerHTML = ""
 }
@@ -107,7 +103,7 @@ function displayError(elementoHTML) {
 searchBar.addEventListener("keyup", (e) => {
     let searchedInput = e.target.value.toLowerCase();
     let filteredCards = findDate.filter(event =>
-        (mapCategories.length === 0 || mapCategories.includes(event.category)) //will filter just the events checked AND tht include what the sear bar has
+        (mapCategories.length === 0 || mapCategories.includes(event.category))
         && event.name.toLowerCase().includes(searchedInput));
 
     if (filteredCards.length == 0) {
