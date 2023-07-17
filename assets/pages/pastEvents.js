@@ -12,7 +12,7 @@ let mapCategories = [];
 
 
 fetch("https://mindhub-xj03.onrender.com/api/amazing")
-.then(answer => answer.json())
+.then(response => response.json())
 .then( data => {
     events = data.events;
     console.log(data);
