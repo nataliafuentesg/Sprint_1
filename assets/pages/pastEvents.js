@@ -1,13 +1,19 @@
-console.log([document])
+//console.log([document])
+import {printTemplate , showCheckbox, clear, displayError} from '../module/functions.js'
+
 
 let container = document.getElementById("pastEventsCards");
 let checkboxContainer = document.getElementById("checkboxContainer");
 let searchBar = document.getElementById("searchBar");
-let findDate;
 
-let checkboxesArray = [];
+let findDate;
+let events;
+let category;
+let categoryNoRepeat; 
+let categoryArray; 
 let selectedCategories = [];
 let mapCategories = [];
+let checkboxesArray = [];
 
 
 
@@ -33,49 +39,7 @@ fetch("https://mindhub-xj03.onrender.com/api/amazing")
 })
 .catch(error => console.log(error))
 
-function createCard(object) {    
-        return `<div class="col">
-            <div class="card h-100" style="width: 17rem;">
-            <img src="${object.image}" class="card-img-top" alt="img">
-            <div class="card-body">
-                <h5 class="card-title">${object.name}</h5>
-                <p class="card-text">${object.description}</p>
-                <div class="info">
-                    <p>$${object.price}</p>
-                    <a href="./details.html?id=${object._id}" class="details">Details</a>
-                </div>
-            </div>
-            </div>
-            </div>`    
 
-}
-
-
-function printTemplate(array, elementoHTML) {
-    
-        let template = ""
-        for (let event of array) {
-            
-            template += createCard(event)
-        }
-        console.log(template)
-        elementoHTML.innerHTML += template
-    
-}
-
-function createCheckbox(category) {
-    return ` <label for="${category}">${category}</label>
-            <input type="checkbox" name="category" id="${category}" value="${category}">
-            `
-}
-
-function showCheckbox(array, elementoHTML) {
-
-    for (let category of array) {
-        elementoHTML.innerHTML += createCheckbox(category)
-    }
-
-}
 
 checkboxContainer.addEventListener("change", () => {
     selectedCategories = checkboxesArray.filter(checkboxAr => checkboxAr.checked);
@@ -96,15 +60,6 @@ checkboxContainer.addEventListener("change", () => {
 }
 
 );
-
-
-function clear(elementoHTML) {
-    elementoHTML.innerHTML = ""
-}
-
-function displayError(elementoHTML) {
-    elementoHTML.innerHTML = `<H3>There Are No Coincidences</H3>`
-}
 
 searchBar.addEventListener("keyup", (e) => {
     let searchedInput = e.target.value.toLowerCase();

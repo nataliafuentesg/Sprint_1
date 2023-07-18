@@ -112,13 +112,16 @@ function revenuesAndAssistanceUpComing(array, htmlElement) {
 
     for (let i = 0; i < mapByCategory.length; i++) {
         let event = mapByCategory[i];
+        console.log(event)
         if (!categoryData[event.category]) {
             categoryData[event.category] = {
                 revenue: 0,
                 totalCapacity: 0,
-                totalEstimate: 0,
+                totalEstimate: 0,               
             };
+            console.log(categoryData)
         }
+        console.log(categoryData)
         categoryData[event.category].revenue += event.price * event.estimate;
         categoryData[event.category].totalCapacity += event.capacity;
         categoryData[event.category].totalEstimate += event.estimate;
