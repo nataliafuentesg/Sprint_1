@@ -1,6 +1,8 @@
 // console.log([document])
 import {printTemplate , showCheckbox, clear, displayError} from './assets/module/functions.js'
 
+let baseUrl = window.location.href
+console.log(baseUrl)
 let container = document.getElementById("homeCards");
 let checkboxContainer = document.getElementById("checkboxContainer")
 let searchBar = document.getElementById("searchBar")
@@ -60,13 +62,7 @@ searchBar.addEventListener("keyup", (e) => {
     filterAndDisplayCards(searchedInput);    
 })
 
-// function clear(elementoHTML) {
-//     elementoHTML.innerHTML = ""
-// }
 
-// function displayError(elementoHTML) {
-//     elementoHTML.innerHTML = `<H5>There Are No Coincidences</H5>`
-// }
 
 
 

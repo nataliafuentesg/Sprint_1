@@ -12,6 +12,9 @@ console.log(location.search);
 let containerDetail = document.getElementById('detailCard')
 console.log(containerDetail);
 
+let baseUrl = window.location.href
+    console.log(baseUrl)
+
 let detail = {};
 let currentDate;
 

@@ -1,4 +1,13 @@
 function createCard(object) {
+    let baseUrl = window.location.href
+    console.log(baseUrl)
+    let detailsPagePath;
+    if (baseUrl.includes('index.html')) {
+        detailsPagePath = './assets/pages/details.html';
+    } else {
+        detailsPagePath = './details.html';
+    }
+    
     return `<div class="col">
             <div class="card h-100" style="width: 17rem!important">
             <img src="${object.image}" class="card-img-top object-fit-cover" alt="img">
@@ -7,7 +16,7 @@ function createCard(object) {
                 <p class="card-text">${object.description}</p>
                 <div class="info">
                     <p>$${object.price}</p>
-                    <a href="./assets/pages/details.html?id=${object._id}" class="details">Details</a>
+                    <a href="${detailsPagePath}?id=${object._id}" class="details">Details</a>
                 </div>
             </div>
             </div>
