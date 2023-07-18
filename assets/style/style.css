@@ -10,7 +10,9 @@ header{
 }
 
 .carousel-caption{
-    bottom: 9rem !important;    
+    bottom: 9rem !important;
+    text-shadow: 2px 0 #000000, -2pxrgb(0, 0, 0)fff, 0 2px #000000, 0 -2px #000000,
+               1px 1px #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000000;    
 }
 body{
     position: relative;
@@ -31,6 +33,8 @@ h1{
     font-size: 4rem !important;
     font-style: oblique;
     font-weight: bolder !important;
+    text-shadow: 2px 0 #63458c, -2px 0 #63458c;
+
 }
 
 .navbar-nav, .mr-auto {
@@ -226,7 +230,7 @@ table, td, th {
     border-collapse: collapse;
     padding: 3px;
     text-align: left; 
-    
+    text-align: center;   
        
 }
 

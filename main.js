@@ -8,6 +8,7 @@ let events;
 let category;
 let categoryNoRepeat; 
 let categoryArray; 
+let searchedInput = searchBar.value.toLowerCase();
 let selectedCategories = [];
 let mapCategories = [];
 let checkboxesArray = [];
@@ -72,34 +73,7 @@ function showCheckbox(array, elementoHTML) {
     }
 
 }
-
-checkboxContainer.addEventListener("change", () => {
-    selectedCategories = checkboxesArray.filter(checkboxAr => checkboxAr.checked);    
-    mapCategories = selectedCategories.map(checkboxMap => checkboxMap.value);    
-    let searchedInput = searchBar.value.toLowerCase();
-    let filteredCards = events.filter(event =>
-        (mapCategories.length === 0 || mapCategories.includes(event.category))
-        && event.name.toLowerCase().includes(searchedInput)
-    );   
-    if (filteredCards.length === 0) {
-        displayError(container);
-    } else {
-        clear(container);       
-        printTemplate(filteredCards, container);
-    }
-}
-);
-
-function clear(elementoHTML) {
-    elementoHTML.innerHTML = ""
-}
-
-function displayError(elementoHTML) {
-    elementoHTML.innerHTML = `<H5>There Are No Coincidences</H5>`
-}
-
-searchBar.addEventListener("keyup", (e) => {
-    let searchedInput = e.target.value.toLowerCase();
+function filterAndDisplayCards(input){
     let filteredCards = events.filter(event =>
         (mapCategories.length === 0 || mapCategories.includes(event.category)) 
         && event.name.toLowerCase().includes(searchedInput));
@@ -111,7 +85,29 @@ searchBar.addEventListener("keyup", (e) => {
         clear(container);
         printTemplate(filteredCards, container);
     }
+}
+
+checkboxContainer.addEventListener("change", () => {
+    selectedCategories = checkboxesArray.filter(checkboxAr => checkboxAr.checked);    
+    mapCategories = selectedCategories.map(checkboxMap => checkboxMap.value);    
+    filterAndDisplayCards(searchedInput);    
+}
+);
+
+searchBar.addEventListener("keyup", (e) => {
+    searchedInput = e.target.value.toLowerCase();
+    filterAndDisplayCards(searchedInput);    
 })
+
+function clear(elementoHTML) {
+    elementoHTML.innerHTML = ""
+}
+
+function displayError(elementoHTML) {
+    elementoHTML.innerHTML = `<H5>There Are No Coincidences</H5>`
+}
+
+
 
 
 
