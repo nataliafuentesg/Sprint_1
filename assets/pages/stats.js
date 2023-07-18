@@ -140,8 +140,9 @@ function revenuesAndAssistanceUpComing(array, htmlElement) {
         let { revenue, totalCapacity, totalEstimate } = categoryData[category];
         let percentage = (totalEstimate * 100) / totalCapacity;
 
-        htmlElement.innerHTML +=  '<tr><td>' + category + '</td><td>' + USDollar.format(revenue)
-                                  + '</td><td>' + percentage.toFixed(1) + '%</td></tr>';
+        htmlElement.innerHTML +=  `<tr><td>${category}</td>
+                                   <td>${USDollar.format(revenue)}</td>
+                                   <td> ${percentage.toFixed(1)}%</td></tr>`;
     }  
 
     
@@ -186,8 +187,8 @@ function revenuesAndAssistancePast(array, htmlElement){
         let {revenue, totalCapacity, totalAssistance} = categoryData[category];
         let percentage = (totalAssistance * 100) / totalCapacity;
 
-        htmlElement.innerHTML +=  '<tr><td>' + category
-                                  + '</td><td>' + USDollar.format(revenue)
-                                  + '</td><td>' + percentage.toFixed(1) + '%</td></tr>';
+        htmlElement.innerHTML +=  `<tr><td>${category}</td>
+                                   <td>${USDollar.format(revenue)}</td>
+                                   <td> ${percentage.toFixed(1)}%</td></tr>`;
     }  
 }
